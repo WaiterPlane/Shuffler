@@ -9,9 +9,8 @@ export default function SpotifyShuffler() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  // Spotify OAuth config - you'll need to create an app at https://developer.spotify.com/dashboard
   const CLIENT_ID = '5dbf24359e504094985647fc4e2d8951';
-  const REDIRECT_URI = 'https://waiterplane.github.io/Shuffler/';
+  const REDIRECT_URI = 'https://waiterplane.github.io/shuffler/';
   const SCOPES = 'user-read-private user-read-email playlist-read-private user-modify-playback-state user-read-playback-state';
 
   useEffect(() => {
@@ -70,7 +69,6 @@ export default function SpotifyShuffler() {
     }
   };
 
-  // Fisher-Yates shuffle with crypto.getRandomValues for true randomness
   const trulyRandomShuffle = (array) => {
     const shuffled = [...array];
     const randomValues = new Uint32Array(shuffled.length);
@@ -142,9 +140,6 @@ export default function SpotifyShuffler() {
           >
             Connect to Spotify
           </button>
-          <p className="text-xs text-gray-400 text-center mt-4">
-            You'll need to set up a Spotify Developer app first
-          </p>
         </div>
       </div>
     );
